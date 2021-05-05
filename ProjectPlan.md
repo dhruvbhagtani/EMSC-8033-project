@@ -4,15 +4,14 @@
 
 ## Executive summary
 
-In one to two sentences, explain the background, the broad goals of the project and what the specific outcomes will be.
-
-**Example:** _(this is based on the seismic monitoring dashboard that Louis showed). Seismic stations can be used to monitor human noise over the course of the day. Some seismometers stream data live to a server and so this processing can be done in near-real time. In this project I plan to build an online dashboard which processes the data once a day and uploads the results to github as 1) raw data, 2) an image that can be embedded in websites, 3) an updating csv table in github. I also plan to use the github "actions" engine to provide all the necessary processing power._
+Large-scale circulatory patterns, called gyres, are omnipresent in the oceans. These gyres are known to be driven primarily by winds, but in recent years, it has come to light that surface buoyancy (heat and salt fluxes) can also affect the formation and evolution of these gyres. Although a full demystifcation of drivers of oceanic gyres is impossible within the time frame of the project, a step in the right direction is to implement a numerical solver for depth-integrated velocities in the presence of density variations (if time permits) for the mixed layer (ML) only. For the purpose of the project, the ML is the only moving layer in the ocean, and there is no exchange of water masses between the ML and thermocline layer.
 
 ## Goals
 
-- Goal 1
-- Goal 2
-- ...
+- Solving several 1D test cases, each with a specific forcing, like wind stress, coriolis forcing, effects of surface undulations.
+- Coding similar tests for the 2D test cases using several boundary conditions, like free-slip or no-slip.
+- Using the depth-integrated velocity equations in a fixed density and variable ML formulation and doing post-processing for obtaining barotropic streamfunction in the absence and presence of wind-stress and surface buoynacy.
+- Extending the fixed density formulation to spatially and temporally variable density and ML case.
 
 (Write things that you can assess whether they have been accomplished. For example, a goal like “improve visualisation of ocean output” is vague... But a goal that reads “implement functionality to plot streamlines of horizontal velocities in various slices from 3D ocean output” is specific enough.)
 
