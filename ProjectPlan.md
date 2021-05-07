@@ -4,7 +4,7 @@
 
 ## Executive summary
 
-Large-scale circulatory patterns, called gyres, are omnipresent in the oceans. These gyres are known to be driven primarily by winds, but in recent years, it has come to light that surface buoyancy (heat and salt fluxes) can also affect the formation and evolution of these gyres. Although a full demystifcation of drivers of oceanic gyres is impossible within the time frame of the project, a step in the right direction is to implement a numerical solver for depth-integrated velocities in the presence of density variations (if time permits) for the mixed layer (ML) only. For the purpose of the project, the ML is the only moving layer in the ocean, and there is no exchange of water masses between the ML and thermocline layer.
+Implementing a numerical solver for depth-integrated velocities in the presence of density variations (if time permits) for the mixed layer (ML) only. For the purpose of the project, the ML is the only moving layer in the ocean, and there is no exchange of water masses between the ML and thermocline layer.
 
 ## Goals
 
@@ -13,14 +13,26 @@ Large-scale circulatory patterns, called gyres, are omnipresent in the oceans. T
 - Using the depth-integrated velocity equations in a fixed density and variable ML formulation and doing post-processing for obtaining barotropic streamfunction in the absence and presence of wind-stress and surface buoynacy.
 - Extending the fixed density formulation to spatially and temporally variable density and ML case.
 
-(Write things that you can assess whether they have been accomplished. For example, a goal like “improve visualisation of ocean output” is vague... But a goal that reads “implement functionality to plot streamlines of horizontal velocities in various slices from 3D ocean output” is specific enough.)
-
 ## Background and Innovation  
 
-_Give more details on the scientific problem that you are working on and how this project will advance the discipline or help with your own research.
-(Where applicable, describe how people have been achieving this goal up to now, talk about existing packages, their limitations, whether you can generalise something to help other people use your code)._
+Large-scale circulatory patterns, called gyres, are omnipresent in the oceans. These gyres are known to be driven primarily by winds [Luyten et al, 1983](https://journals.ametsoc.org/view/journals/phoc/13/2/1520-0485_1983_013_0292_tvt_2_0_co_2.xml) and [Wunsh and Ferrari, 2004](https://www.annualreviews.org/doi/abs/10.1146/annurev.fluid.36.050802.122121), but in recent years, it has come to light that surface buoyancy (heat and salt fluxes) can also affect the formation and evolution of these gyres [Hogg and Gayen, 2020](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2020GL088539).
+
+Extensive research has been done on wind-driven gyres, dating back to as early as 1940s [Stommel, 1948](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/TR029i002p00202). However, from the 1980s, researchers started exploring other ways by which oceanic gyres can be created, such as tidal forces and surface buoyancy fluxes [Luyten and Stommel, 1986](https://journals.ametsoc.org/view/journals/phoc/16/9/1520-0485_1986_016_1551_gdbcwa_2_0_co_2.xml). There are several ways to prescribe these surface buoayncy fluxes - (i) Imposing temperature gradients [Liu and Pedlosky, 1994](), and (ii) Setting heat and freshwater fluxes [Huang and Bryan, 1987]().
+
+This project lays the foundation for a successful implementation of an innovative toy model, which is needed to understand the various feedbacks due to wind and heat fluxes on several ocean properties. The toy model is an idealised version of a typical General Circulation Model (GCM), i.e., the toy model is devoid of any bells and whistles that is present in a GCM. It has a provision of calculating the depth-integrated Eulerian velocity using the Navier-Stoke's equations. Additionally, we can also calculate the temporal and spatial variations in ocean density and mixed layer height. 
+
+To build this toy model, we need to perform several tests, which is achieved through this project.
 
 ## Resources & Timeline
+
+This project is part of my PhD. The toy model has been developed to a large extent, but only theoretically. These tests can be simplified into independent tasks, making it a feasible course project. Everything is coded from scratch. There are several tests that can be done - We can test 1D/2D diffusion (or 1D/2D advection) using several schemes (Euler explicit or leap frog scheme) for different discretisation methods (forward, backward and central differences) in the presence of various boundary conditions (Dirichlet, Neumann or periodic). To analyse each test, a convergence and error as a function of model resolution is obtained. A rough timeline for the project is:
+
+11th May, 2021 -> 
+14th May, 2021 ->
+18th May, 2021 ->
+21st May, 2021 ->
+25th May, 2021 ->
+28th May, 2021 ->
 
 _What do you have at your disposal already that will help the project along. Did you convince somebody else to help you ? Are there already some packages you can build upon. What makes it possible to do this project in the time available. Do you intend to continue this project in the future ?_
 
