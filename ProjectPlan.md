@@ -27,17 +27,17 @@ To build this toy model, we need to perform several tests, which is achieved thr
 
 This project is part of my PhD. The toy model has been developed to a large extent, but only theoretically. These tests can be simplified into independent tasks, making it a feasible course project. Everything is coded from scratch. There are several tests that can be done - We can test 1D/2D diffusion (or 1D/2D advection) using several schemes (Euler explicit or leap frog scheme) for different discretisation methods (forward, backward and central differences) in the presence of various boundary conditions (Dirichlet, Neumann or periodic). To analyse each test, a convergence and error as a function of model resolution is obtained. A rough timeline for the project is:
 
-11th May, 2021 -> Create a 1D code for advection, and show that the series converge as distance between two points reduces. Also, show how quickly the error reduces, and when it blows up, for different schemes, like the forward difference, backward difference and central difference.
+__11th May, 2021__ -> Create a 1D code for advection, and show that the series converge as distance between two points reduces. Also, show how quickly the error reduces, and when it blows up, for different schemes, like the forward difference, backward difference and central difference.
 
-14th May, 2021 -> Implement the same code for 1D diffusion, and again show that the series converge as distance between two points reduces. Also, show how quickly the error reduces, and when it blows up, for different schemes, like the forward difference, backward difference and central difference.
+__14th May, 2021__ -> Implement the same code for 1D diffusion, and again show that the series converge as distance between two points reduces. Also, show how quickly the error reduces, and when it blows up, for different schemes, like the forward difference, backward difference and central difference.
 
-18th May, 2021 -> As the 1D case is finished, implement the same for 2D case (both advection and diffusion), and again show how the results converge by changing the number of points in the domain. Show how the forward difference, backward difference and central difference differ from each other.
+__18th May, 2021__ -> As the 1D case is finished, implement the same for 2D case (both advection and diffusion), and again show how the results converge by changing the number of points in the domain. Show how the forward difference, backward difference and central difference differ from each other.
 
-21st May, 2021 -> Implement the 1D shallow water equations - test whether the FD, BD or CD are stable or not. 
+__21st May, 2021__ -> Implement the 1D shallow water equations - test whether the FD, BD or CD are stable or not. 
 
-25th May, 2021 -> Implement the 2D equations in the absence of explcit density or height variation equations - in other words, a Boussinesq set of equations, solving for horizontal velocities in a simplified domain.
+__25th May, 2021__ -> Implement the 2D equations in the absence of explcit density or height variation equations - in other words, a Boussinesq set of equations, solving for horizontal velocities in a simplified domain.
 
-28th May, 2021 -> If time permits, allow for density and height variaions in the simplified domain.
+__28th May, 2021__ -> If time permits, allow for density and height variaions in the simplified domain.
 
 This project forms a part of my PhD thesis - I've prepared a set of equations to be used in a simplified model, known as the "Toy Model", where there are very few parametrisations. In order to code this "Toy Model", it is important to test a few basic ideas - for example, a 1D case, followed by a 2D case, considering forcings individually. 
 
@@ -45,7 +45,7 @@ I've devised this timeline considering the scenario where I am unable to finish 
 
 ## Testing, validation, documentation
 
-Testing and validation are important aspects of any code. The reason for starting the toy model from scratch is that since the differential equations are so simplified that we can solve them to obtain analytical solutions, and compare them with the numerical solution. This way, we can lay a strong foundation and build our way upwards. Some more tests can be doing a Von Neumann error analysis to understand why the FD, BD or CD schemes are failing for a specific differential equation. In addition, the _assert_ function is a very handy tool to throw exception errors and understand the source of these errors.
+Testing and validation are important aspects of any code. The reason for starting the toy model from scratch is that the differential equations are so simplified that we can solve them to obtain analytical solutions, and compare them with the numerical solution. This way, we can lay a strong foundation and build our way upwards. Some more tests can be doing a Von Neumann error analysis to understand why the FD, BD or CD schemes are failing for a specific differential equation. In addition, the _assert_ function is a very handy tool to throw exception errors and understand the source of these errors.
 
 Finally, I intend to document each piece of code in the following fashion:
 
