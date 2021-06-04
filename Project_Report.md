@@ -68,6 +68,22 @@ The notebook performs both advection and diffusion simultaneously on a tracer on
 
 ## 1D Shallow Water equations
 
+This notebook performs an evolution on the x and y direction fluid velocities in a 1D domain using an idealised form of Navier Stokes equations, known as the shallow water equations (SWE). The shallow water equations are a set of hyperbolic partial differential equations (or parabolic if viscous shear is considered) that describe the flow below a pressure surface in a fluid (sometimes, but not necessarily, a free surface). We perform this analysis using all three boundary conditons - Dirichlet, Neumann and Periodic. 
 
+For each test in this notebook, we have a small wave in the middle of the domain. As time elapse, the wave breaks into two waves, each having half the amplitude of the original wave. These two waves start travelling in the opposite directions and when they reach the edges, they interact with the imposed boundary conditions. Summarising the key observations from this notebook:
+1. We first use an unstaggered grid in a non-rotating domain, meaning that the tracer and momentum variables are placed and evolved on the same grid. This is easier to code, but in most global circulation models, it is not favoured. The reason is easily seen from this analysis - the simulation isn't stable for any number of points in the domain. It is stable until it reaches the boundaries, where it starts blowing up.
+2. The next test is to use a staggered grid in a non-rotating domain, i.e., the tracer (wave height) and momentum (x and y velocities) variables are evolved at different places in the domain. This is belived to be more stable, and is often used in GCMs. When applied to the 1D SWE, the staggered grid works well, and produces correct results even after interacting with the boundaries.
+3. The Dirichlet boundary conditions are also called reflecting boundary conditions, and we can see the reason why. When applied to the staggered grid, the wave bounces to the other side of the x-axis and starts propagating in the opposite direction. For Neumann boundary conditions, the wave does start moving in the opposite direction, but it doesn't flip about the x-axis.
+4. Finally, we apply the staggered grid to 1D SWE in a rotating domaain. The results are similar to (2) - we get a stable evolution of the wave. A point worth mentioning is that small oscillations in the wave heights start to develop as both waves interact with each other.
 
 ## 2D Advection and Diffusion
+
+The notebook performs both advection and diffusion simultaneously on a tracer, but this time on a 2D grid. We use an ustaggered grid here. Summarising the key observations from this notebook:
+1. The first test is 2D advection. The code is generalised, so we can have two different velocities in x and y directions, and even different velocities for each grid point. The numerical solution matches well with the true solution for all time steps.
+2. The next test is 2D diffusion. Again, we can impose different diffusivities in x and y directions, and even for each grid point. The errors are very less when compared against the numerical solution, so 2D diffusion code works.
+3. Finally, we add these two functionalities into a single piece of code. We solve for a tracer experiencing both advection and diffusion simultaneously. When compared against the true solution, the errors are minute. 
+4. We also perform an error analysis for each of the three cases above, and for each case, the error goes down as we increase the number of points in the domain. The decreasing line follows the expected order of convergence, based on what sort of finite differencing scheme we have used for each operatoin.
+
+## 2D Coriolis and Wind Forcing
+
+This notebook 
