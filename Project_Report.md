@@ -44,6 +44,11 @@
     * 2D_Diff_Error.mp4
     * 2D_Adv_Diff.mp4
     * 2D_Adv_Diff_Error.mp4
+  * 2D_Cor
+    * um_new.mp4
+    * um_new_error.mp4 
+    * vm_new.mp4
+    * vm_new_error.mp4 
 
 FD -> Forward Difference, BD -> Backward Difference, CD -> Central difference
 
@@ -86,4 +91,8 @@ The notebook performs both advection and diffusion simultaneously on a tracer, b
 
 ## 2D Coriolis and Wind Forcing
 
-This notebook 
+This final notebook helps our understanding of the Coriolis and wind forces in a 2D domain. Summarising the key observations from this notebook:
+1. The first test involves only the wind forcing, i.e., we have a non-rotating region. We numerically evolve the horizontal velocities and compare them against the true solution, which is found analytically.
+2. Next, we have a rotating 2D region. The analytical solution is much more difficult to find, and the math is done in the notebook. Finally, we compare our numerical solution with this analytical solution, and our results match to a large extent.
+
+With all the bits and pieces coded individaully, the next step of this project is to write down a code for 2D Navier Stoke's equations with fixed height and density. Unfortunately, contrary to what I had written down in the Project Plan, I couldn't reach this stage, and this becomes a future work for this project.
