@@ -1,6 +1,6 @@
-# EMSC4033 project plan template
+# EMSC4033 project plan
 
-## Project title
+## Toy Model Development
 
 ## Executive summary
 
