@@ -1,4 +1,4 @@
-# EMSC4033 project report
+# EMSC4033 Project Report
 
 ## Toy Model Development
 
